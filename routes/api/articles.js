@@ -5,9 +5,9 @@ router.route("/")
     .get(articleController.findAll)
     .post(articleController.create);
 
-// Matches with "/api/articles/search
-router.route("/search/:query")
-    .get(articleController.searchArticles);
+// // Matches with "/api/articles/search
+// router.route("/search/:query")
+//     .get(articleController.searchArticles);
 
 
 // Matches with "/api/articles/saved"

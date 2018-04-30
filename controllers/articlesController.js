@@ -3,15 +3,18 @@ const axios = require("axios");
 
 // Defining methods for the articleController
 module.exports = {
-    searchArticles: function(req,res) {
-        const authKey = "57d8947a7c0c4bd2b339d8dac0cfa844";
-        const queryURLBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + authKey;
-        console.log("I make it to seachArticle");
-        console.log(req.params.query);
-        axios.get(queryURLBase, {params: req.params.query})
-            .then(({data: {results}}) => res.json(results))
-            .catch(err => res.status(422).json(err));
-    },
+    // searchArticles: function(req,res) {
+    //     const authKey = "57d8947a7c0c4bd2b339d8dac0cfa844";
+    //     const queryURLBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + authKey;
+    //     console.log("I make it to seachArticle");
+    //     console.log(req.params.query);
+    //     axios.get(queryURLBase + req.params.query)
+    //         .then(({data: {results}}) => {
+    //             console.log(results);
+    //             res.json(results)
+    //         })
+    //         .catch(err => res.status(422).json(err));
+    // },
     findAll: function(req,res){
         db.Article
             .find(req.query)

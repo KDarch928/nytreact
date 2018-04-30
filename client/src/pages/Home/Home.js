@@ -72,7 +72,21 @@ class Home extends Component {
         // this.setState({ search: query});
         console.log(query);
         API.getSearchArticles(query)
-            .then(res => this.setState({ results: res.data }))
+            .then(res => {
+                // console.log(res.data.response.docs);
+                let searchRes = res.data.response.docs;
+                if (!Array.isArray(this.state.results) || !this.state.results.length) {
+                    // array does not exist, is not an array, or is empty
+
+                    // this.state.results.push(searchRes);
+                    this.setState(
+                        {
+                            results: searchRes
+                        });
+                }
+                // this.setState({ results: res.data })
+                console.log(this.state.results);
+            })
             .catch(err => console.log(err));
     };
 
