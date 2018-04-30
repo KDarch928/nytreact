@@ -1,0 +1,11 @@
+.navbar {
+    background: #4f8efa;
+}
+
+.navbar a {
+    color:black;
+}
+
+.navbar a:hover {
+    color: #ffc80a;
+}
